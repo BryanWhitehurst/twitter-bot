@@ -1,5 +1,5 @@
 import requests, json
-
+from datetime import datetime
 
 
 def getMsg():
@@ -15,6 +15,9 @@ def getMsg():
     z = x["weather"]
     weather_desc = z[0]["description"]
 
-    output = "It is currently " + str(round(current_temp, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc
+
+    current_time = now.strftime("%H:%M:%S")
+
+    output =  current_time + ": It is" + str(round(current_temp, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc
     return output 
 
