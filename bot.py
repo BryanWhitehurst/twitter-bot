@@ -1,6 +1,6 @@
 from generatetext import getMsg
 import tweepy, time
-from credentials import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
+from credentials import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET  
 
 
 
