@@ -17,9 +17,17 @@ def getMsg():
     weather_desc = z[0]["description"]
 
     tz = pytz.timezone('America/Chicago')
-    time = datetime.now(tz)
-
-
-    output =  current_time + ": It is " + str(round(time, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc
+    tz_Chicago = datetime.now(tz)
+    time = tz_Chicago.strftime("%H:%M:%S")
+    timeList = time.split(':')
+    hour = int(timeList[0])
+    mins = int(timeList[1])
+    
+    if hour > 12:
+        hour = hour - 12
+        time = str(hour) + ":" + str(mins) + " PM"
+    else:
+        time = str(hour) + ":" + str(mins) + " AM"
+    output =  time + ": It is " + str(round(current_temp, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc + "."
     return output 
 
