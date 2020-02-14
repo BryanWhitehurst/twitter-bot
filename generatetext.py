@@ -1,5 +1,6 @@
-import requests, json, time
-
+import requests, json
+from datetime import datetime
+import pytz
 
 
 def getMsg():
@@ -15,9 +16,10 @@ def getMsg():
     z = x["weather"]
     weather_desc = z[0]["description"]
 
-    t = time.localtime()
-    current_time = time.strftime("%H:%M:%S", t)
+    tz = pytz.timezone('America/Chicago')
+    time = datetime.now(tz)
 
-    output =  current_time + ": It is " + str(round(current_temp, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc
+
+    output =  current_time + ": It is " + str(round(time, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc
     return output 
 

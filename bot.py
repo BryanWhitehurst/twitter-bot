@@ -12,5 +12,5 @@ api = tweepy.API(auth)
 i = 0
 while True:
     api.update_status(getMsg())
-    time.sleep(30)
+    time.sleep(1800)
     i = i+ 1
