@@ -26,8 +26,13 @@ def getMsg():
     if hour > 12:
         hour = hour - 12
         time = str(hour) + ":" + str(mins) + " PM"
+        if mins < 10:
+            time = str(hour) + ":" + "0" + str(mins) + " PM"
     else:
         time = str(hour) + ":" + str(mins) + " AM"
+        if mins < 10:
+            time = str(hour) + ":" + "0" + str(mins) + " AM"
+
     output =  time + ": It is " + str(round(current_temp, 0)) + " degrees fahrenheit in Tuscaloosa, AL with " + weather_desc + "."
     return output 
 
