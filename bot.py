@@ -18,5 +18,5 @@ while True:
 i = 0
 while True:
     api.update_status(getMsg())
-    time.sleep(1800)
+    time.sleep(21600)
     i = i+ 1
